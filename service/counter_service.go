@@ -34,6 +34,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 func CounterHandler(w http.ResponseWriter, r *http.Request) {
 	res := &JsonResult{}
 
+	fmt.Println(r.Header)
+	fmt.Println(r.URL.RawPath)
 	if r.Method == http.MethodGet {
 		counter, err := getCurrentCounter()
 		if err != nil {
